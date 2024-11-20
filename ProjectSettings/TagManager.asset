@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Player1
+  - Player2
+  - Camera1
+  - Camera2
+  - SpawnManager
+  - SpawnedObjects
+  - PowerUp
+  - AudioListener
+  - VolumeSlider
+  - SoundSlider
+  - P1KeyBind
+  - P2KeyBind
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground1
+  - Ground2
+  - Player1
+  - Player2
+  - Post-Processing
+  - Post-Processing 2
+  - ConveyerBelt
+  - Player 1 Arrow
+  - Player 2 Arrow
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
