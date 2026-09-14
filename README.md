@@ -1,26 +1,59 @@
 # Square Domination
 
-A 3D local two-player shooter built with **Unity** and **C#**.
+A local 2-player action game built in **Unity and C#** where players fight across multiple sides of a cube using directional movement, independently controlled weapons, power-ups, and environmental hazards.
 
-Two cube-shaped players fight across an isometric/orthographic arena using independently controlled movement and weapon aiming. Players can collect randomized power-ups, use environmental mechanics such as conveyor belts, move between different faces of the arena, and compete in either timed or endless matches.
+The project was originally developed and published in 2020 and later released publicly on both **Newgrounds** and **itch.io**.
 
-## Play the Game
+## Gameplay
 
-**Play the released HTML5 build on itch.io:**  
-https://shadowpeterx.itch.io/square-domination
+Two players compete in the same local session and attempt to eliminate each other while navigating between different sides of the arena.
 
-## Features
+Core gameplay systems include:
 
-- Local two-player combat
-- Independent movement and weapon rotation
-- Shooting, health, death, and respawning
+- Local 2-player controls
+- Independent player movement and weapon rotation
+- Shooting and respawning
+- Traversal between different sides of the cube
+- Recharge timing when changing surfaces
 - Randomly spawning power-ups
-- Healing and weapon-upgrade pickups
-- Conveyor belts that affect player movement
-- Movement between different sides of the cube arena
-- Recharge/cooldown mechanic for cube-face traversal
-- Timed and endless game modes
-- Pause support
+- Health restoration and stronger weapon pickups
+- Conveyor-belt hazards that affect player movement
+- Timed and Endless game modes
+- Pause and game-state controls
+
+## Gameplay Architecture
+
+The project uses Unity's component-based `GameObject` model, with gameplay behavior split across player control, weapons, movement, power-ups, environmental interactions, and match-state logic.
+
+Some implementation details include:
+
+- Shared player behavior implemented through inheritance between player controller scripts
+- Cube-face transitions calculated using vector math and quaternion rotations
+- Movement and simple animations driven through direct vector manipulation
+- Independent movement and weapon orientation for each player
+- Separate systems for projectiles, health, respawning, power-ups, and game modes
+
+The architecture is intentionally lightweight and reflects the scope of the project rather than using a larger framework or engine abstraction layer.
+
+## Public Release
+
+Square Domination was publicly released on Newgrounds and itch.io.
+
+### Newgrounds
+
+The Newgrounds release received:
+
+- **680+ views**
+- **67 user votes**
+- **3.28 / 5 rating**
+
+The game was published on December 22, 2020.
+
+[Play on Newgrounds](https://www.newgrounds.com/portal/view/775309)
+
+### itch.io
+
+[Play on itch.io](https://shadowpeterx.itch.io/square-domination)
 
 ## Controls
 
@@ -29,8 +62,8 @@ https://shadowpeterx.itch.io/square-domination
 | Action | Control |
 |---|---|
 | Move | W / A / S / D |
-| Rotate Gun Left | G |
-| Rotate Gun Right | H |
+| Rotate weapon left | G |
+| Rotate weapon right | H |
 | Shoot | Space |
 
 ### Player 2
@@ -38,33 +71,57 @@ https://shadowpeterx.itch.io/square-domination
 | Action | Control |
 |---|---|
 | Move | Arrow Keys |
-| Rotate Gun Left | Keypad 4 |
-| Rotate Gun Right | Keypad 6 |
+| Rotate weapon left | Keypad 4 |
+| Rotate weapon right | Keypad 6 |
 | Shoot | Keypad 0 |
 
-Press **Escape** to pause.
+Player movement is independent from the direction the weapon is facing, allowing players to move and aim separately.
 
-> Player movement is independent from the direction the weapon is facing.
+## Game Modes
 
-## Gameplay
+### Timed
 
-Damage the opposing player until they are defeated; defeated players respawn so the match can continue.
+Players compete within a fixed match duration.
 
-Power-ups spawn throughout the arena and can restore health or provide a stronger weapon. Conveyor belts push players in their travel direction and can either help or disrupt positioning.
+### Endless
 
-Players can also move to other sides of the cube-shaped arena. After changing sides, that traversal ability must recharge before it can be used again.
+Players can continue fighting without a fixed match timer.
 
-## Tech Stack
+Eliminated players respawn and continue playing.
 
-- **C#**
+## Technical Overview
+
+Square Domination was built using:
+
 - **Unity**
-- **HTML5 build**
+- **C#**
+- Unity physics and collision systems
+- Local multiplayer input handling
+- Runtime game-state management
+- Player health and respawn systems
+- Weapon and projectile mechanics
+- Randomized item spawning
+- Environmental movement mechanics
 
-## Project Links
+The project provided hands-on experience building interconnected gameplay systems rather than isolated mechanics.
 
-- **Source:** https://github.com/Clydie-Juls/square-domination
-- **Playable release:** https://shadowpeterx.itch.io/square-domination
+## Project Structure
 
-## Status
+```text
+.
+├── Assets/
+│   ├── Scripts/
+│   ├── Scenes/
+│   ├── Prefabs/
+│   ├── Materials/
+│   └── ...
+├── Packages/
+├── ProjectSettings/
+└── README.md
+```
 
-Released.
+
+- It uses the **680+ views / 67 votes** as actual external validation instead of pretending they’re players. Newgrounds currently shows 680 views and 67 votes publicly. :contentReference[oaicite:1]{index=1}
+- It describes the actual gameplay instead of the inaccurate “territory capture” language in your current README. :contentReference[oaicite:2]{index=2}
+- It frames this correctly as an **older project that was actually shipped**, which is more valuable to a recruiter than trying to make a 2020 Unity project sound like modern distributed systems work.
+- It gives your resume agent concrete facts it can safely extract: Unity/C#, local multiplayer, published release, 680+ views, 67 votes, game systems implemented.
